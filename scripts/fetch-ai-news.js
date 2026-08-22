@@ -6,6 +6,8 @@
  *   2) TechCrunch AI 分类 RSS
  *   3) VentureBeat AI 分类 RSS
  *   4) The Verge AI 分类 RSS
+ *   5) 量子位（国内 AI 垂直媒体）RSS
+ *   6) 新智元（国内 AI 垂直媒体）RSS
  * 输出结构：data/daily/ai-news.json
  * 运行环境：GitHub Actions（Node 20，内置 fetch），由 .github/workflows/fetch-ai-news.yml
  *           每天 00:30 / 12:30（北京时间）定时触发
