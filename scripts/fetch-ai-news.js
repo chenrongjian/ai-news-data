@@ -26,26 +26,31 @@ const HN_MAX_TOTAL = 80;           // HN 最终最多保留多少条
 const RSS_SOURCES = [
   { key: 'techcrunch', name: 'TechCrunch', feed: 'https://techcrunch.com/category/artificial-intelligence/feed/' },
   { key: 'venturebeat', name: 'VentureBeat', feed: 'https://venturebeat.com/category/ai/feed/' },
-  { key: 'the-verge', name: 'The Verge', feed: 'https://www.theverge.com/rss/ai-artificial-intelligence/index.xml' }
+  { key: 'the-verge', name: 'The Verge', feed: 'https://www.theverge.com/rss/ai-artificial-intelligence/index.xml' },
+  { key: 'qbitai', name: '量子位', feed: 'https://www.qbitai.com/feed' },
+  { key: 'aiera', name: '新智元', feed: 'https://aiera.com.cn/feed', ua: true }
 ];
 const RSS_MAX_PER_SOURCE = 20;
 const CONTENT_MAX_CHARS = 6000;    // 正文纯文本最长保留字符数（控制数据文件体积）
 
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36';
+const UA_FULL = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
 const TIMEOUT = 20000;
 
-// 带超时与重试的 fetch（Node 20 原生）
-async function fetchText(url, retries = 2) {
+// 带超时与重试的 fetch（Node 20 原生）。opts.ua=true 时使用完整浏览器 UA（部分国内源需要）
+async function fetchText(url, retries = 2, opts) {
   let lastErr;
   for (let i = 0; i <= retries; i++) {
     const ctrl = new AbortController();
     const timer = setTimeout(() => ctrl.abort(), TIMEOUT);
     try {
-      const res = await fetch(url, {
-        headers: { 'User-Agent': UA, 'Accept': 'application/json, text/xml, application/rss+xml, */*' },
-        signal: ctrl.signal,
-        redirect: 'follow'
-      });
+      const headers = {
+        'User-Agent': opts && opts.ua ? UA_FULL : UA,
+        'Accept': 'application/json, text/xml, application/rss+xml, */*',
+        'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8'
+      };
+      if (opts && opts.ua) headers['Referer'] = 'https://aiera.com.cn/';
+      const res = await fetch(url, { headers, signal: ctrl.signal, redirect: 'follow' });
       if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
       return await res.text();
     } catch (e) {
@@ -144,7 +149,7 @@ function stripHtml(s) {
 }
 
 async function fetchRSS(source) {
-  const text = await fetchText(source.feed);
+  const text = await fetchText(source.feed, 2, source.ua ? { ua: UA } : undefined);
   const raw = parseFeed(text);
   const list = raw.slice(0, RSS_MAX_PER_SOURCE).map((it, i) => {
     const ts = Date.parse(it.pubDate);
