@@ -29,6 +29,7 @@ const RSS_SOURCES = [
   { key: 'the-verge', name: 'The Verge', feed: 'https://www.theverge.com/rss/ai-artificial-intelligence/index.xml' }
 ];
 const RSS_MAX_PER_SOURCE = 20;
+const CONTENT_MAX_CHARS = 6000;    // 正文纯文本最长保留字符数（控制数据文件体积）
 
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36';
 const TIMEOUT = 20000;
@@ -75,6 +76,7 @@ async function fetchHackerNews() {
         title: hit.title.trim(),
         url: hit.url && hit.url.startsWith('http') ? hit.url : `https://news.ycombinator.com/item?id=${hit.objectID}`,
         summary: '',
+        content: (hit.story_text || '').trim().slice(0, CONTENT_MAX_CHARS),
         points: hit.points || 0,
         comments: hit.num_comments || 0,
         author: hit.author || '',
@@ -119,10 +121,14 @@ function parseFeed(xml) {
     }
     const title = inner('title');
     const pubDate = inner('pubDate') || inner('updated');
-    // RSS 用 description，Atom 用 summary / content
-    const description = inner('description') || inner('summary') || inner('content');
+    // 摘要：RSS 用 description，Atom 用 summary
+    const description = inner('description') || inner('summary');
+    // 正文：RSS 用 content:encoded（全文），Atom 用 content
+    const contentRaw = block.match(/<content:encoded>([\s\S]*?)<\/content:encoded>/i)
+      ? block.match(/<content:encoded>([\s\S]*?)<\/content:encoded>/i)[1]
+      : inner('content');
     if (!link || !title) continue;
-    items.push({ title, link, pubDate, description });
+    items.push({ title, link, pubDate, description, contentRaw });
   }
   return items;
 }
@@ -150,6 +156,8 @@ async function fetchRSS(source) {
       title: stripHtml(it.title),
       url: it.link,
       summary: stripHtml(it.description).slice(0, 200),
+      // 正文优先取全文（content:encoded / atom content），无全文时回退完整摘要
+      content: (stripHtml(it.contentRaw) || stripHtml(it.description)).slice(0, CONTENT_MAX_CHARS),
       points: 0,
       comments: 0,
       author: '',
