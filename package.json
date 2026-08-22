@@ -1,0 +1,12 @@
+{
+  "name": "ai-news-data",
+  "version": "1.0.0",
+  "private": true,
+  "description": "每日全球 AI 资讯数据（Hacker News + TechCrunch + VentureBeat + The Verge），由 GitHub Actions 自动抓取更新",
+  "scripts": {
+    "fetch": "node scripts/fetch-ai-news.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
