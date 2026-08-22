@@ -10,6 +10,8 @@
 | TechCrunch | RSS | AI 分类（artificial-intelligence） |
 | VentureBeat | RSS | AI 分类（ai） |
 | The Verge | RSS | AI 分类（ai-artificial-intelligence） |
+| 量子位 | RSS | 国内 AI 垂直媒体（qbitai.com） |
+| 新智元 | RSS | 国内 AI 垂直媒体（aiera.com.cn） |
 
 ## 更新频率
 
