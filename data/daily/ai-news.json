@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T06:15:59.225Z",
+  "generated_at": "2026-08-22T06:17:36.177Z",
   "count": 120,
   "status": {
     "hacker-news": 58,
@@ -75,7 +75,7 @@
       "summary": "",
       "content": "I think agent-first chat interfaces will be a primary software modality and busy dashboard&#x2F;UI will go away. I’m not sure who exactly wins it, but I want my knowledge to grow&#x2F;go with me.<p>A lot of the “knowledge” ie research, analysis, reasoning will be done by agents as the primary user. Our current notes tools &amp; tasks management systems were built for humans… I don’t care what the 17th thing on my bug backlog is. I want to conduct agents that can execute for me and do great work.<p>What I built OzBrain to do:\n+ Create a central place for agent reasoned knowledge to live\n+ Be agnostic about what apps&#x2F;agents connect to it\n+ Capture everything and track it so I can audit it\n+ Enable teams, collaborators or partners to share brains\n+ Handle conflicts so many agents in the same article doesn’t blow up\n+ Refactor knowledge into more token friendly chunks and map the index well\n+ Close the knowledge loop so new thinking supersedes old thinking across the corpus. Don’t erase, depreciate and link\n+ Keep user data safe and secure\n++ Be easy enough to use that you don’t have to have any technical knowledge<p>Some among us will always build their own custom solutions, but there are millions of tech professionals and small business owners that will use agents heavily and need a solution. So I’m trying to build that.<p>Isn’t this like gBrain? Yes, similar. I think it’s like AWS vs Vercel. AWS is very powerful, configurable, and useful if you’re technical and want to invest the time into really fine tuning your system… but if you just want your web deploy&#x2F;hosting to just work and be easy to deal with you use Vercel.<p>&#x2F;&#x2F; WHY I MADE IT<p>I’ve been enjoying getting back to my technical roots, as I lost my coding skills more than a decade ago, but with AI I can focus on the system and the product in partnership with agent coding workflows.<p>I recently built a Voice AI for older people. To build it I created an agentic engineering workflow (feel free to rip that up as I’m always looking to improve systems: <a href=\"https:&#x2F;&#x2F;ozbrain.com&#x2F;resources&#x2F;eng-flow\" rel=\"nofollow\">https:&#x2F;&#x2F;ozbrain.com&#x2F;resources&#x2F;eng-flow</a>) My approach with coding agents is trust but verify, and I’m trying to replace the parts where a human would review with an adversarial or specialized agent who would give a better answer&#x2F;review.<p>I have workflows that will go high level task to shipped PR running in Claude cloud sessions. I use Claude Code locally and Cursor when I want a tighter loop on doing visual work like UI or layout. And Codex to either load balance usage for TokenThriffting or when I want a different llm to think thru something.<p>It was a pain in the ass passing .md files around and keep track of which version was the most recent, so I built a hosted .md storage right in Supabase and any of my agents already have Supabase access. This let me build a solid, scalable, secure voice AI from my phone at the gym. All my agents have access to our knowledge, can write to it, update and refer to it as we build and improve the product and the systems we use.<p>Out of 75 founder friends I asked about how they manage shared knowledge, 26 built their own custom knowledge systems… Obsidian vaults with 7k files synced through a VPS, markdown repos behind their own MCP servers, cron jobs stitching Supabase to a skills file… each a different Frankenstein they have to maintain. 32 said they felt the pain of moving static files around but didn’t have any solution for it.<p>So I rebuilt my brain better and used it to build it.<p>&#x2F;&#x2F; HOW YOU CAN HELP<p>Would love to have you try it out. The maintenance loop is still in alpha so not running it on customer data yet.<p>If you built your own brain I’d love to hear how you did it. What criteria was most important for you in its design &amp; function.<p>If you are tired of shuffling .md files around I’d love to have you try out OzBrain and to give feedback, just ask your agent to put it in the shared bugs &amp; features brain!<p>Cheers!\nBubs.co",
       "points": 61,
-      "comments": 27,
+      "comments": 28,
       "author": "dariusmonsef",
       "published_at": "2026-08-21T23:09:06Z",
       "published_ts": 1787353746000
@@ -137,20 +137,6 @@
       "published_ts": 1787350546000
     },
     {
-      "source": "the-verge",
-      "source_name": "The Verge",
-      "id": "the-verge-0",
-      "title": "Over 1 million people have clicked LinkedIn’s AI slop button",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/983502/linkedin-ai-slop-button-one-million-people-message",
-      "summary": "LinkedIn actually announced a \"Seems like AI slop\" button on July 30th, and the company says that a lot of people have already used it. According to a Thursday post from chief product officer Hari Sri",
-      "content": "LinkedIn actually announced a \"Seems like AI slop\" button on July 30th, and the company says that a lot of people have already used it. According to a Thursday post from chief product officer Hari Srinivasan , \"over a million people\" have clicked on the button, which is accessible from the three dots menu on a post. LinkedIn announced the button a few weeks after AI detector Pangram determined that 41 percent of LinkedIn's longform posts were flagged as fully AI generated, which 404 Media reported on . Alongside the AI slop button, LinkedIn introduced \"new and improved\" classifiers to identify posts as AI and removed a feature that would \"en … Read the full story at The Verge.",
-      "points": 0,
-      "comments": 0,
-      "author": "",
-      "published_at": "2026-08-21T21:54:07.000Z",
-      "published_ts": 1787349247000
-    },
-    {
       "source": "hacker-news",
       "source_name": "Hacker News",
       "id": "hn-49393052",
@@ -191,20 +177,6 @@
       "author": "",
       "published_at": "2026-08-21T19:43:39.000Z",
       "published_ts": 1787341419000
-    },
-    {
-      "source": "the-verge",
-      "source_name": "The Verge",
-      "id": "the-verge-1",
-      "title": "Major YouTube creators are facing backlash for accepting AI money",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/983181/matti-haapoja-sam-kold-kolder-higgsfield-seedance-backlash",
-      "summary": "Over the past few days, a number of prominent filmmaking content creators including Matti Haapoja and Sam \"Kold\" Kolder have posted videos of themselves demonstrating what's possible with AI platform ",
-      "content": "A still from Sam Kolder’s video “AI is replacing me.” | Screenshot: The Verge, YouTube Over the past few days, a number of prominent filmmaking content creators including Matti Haapoja and Sam \"Kold\" Kolder have posted videos of themselves demonstrating what's possible with AI platform Higgsfield . The videos highlight Higgsfield's recently added Seedance 2.5 functionality and pitch these technologies as the future of video production. In response to these videos, other creators started sharing what appear to be screenshots of partnership offers they'd received from PR firms working on Higgsfield's behalf. All of this led fans to the conclusion that Higgsfield has been trying to use creators to boost its profile and garner goo … Read the full story at The Verge.",
-      "points": 0,
-      "comments": 0,
-      "author": "",
-      "published_at": "2026-08-21T19:16:43.000Z",
-      "published_ts": 1787339803000
     },
     {
       "source": "hacker-news",
@@ -319,6 +291,20 @@
       "published_ts": 1787327956000
     },
     {
+      "source": "the-verge",
+      "source_name": "The Verge",
+      "id": "the-verge-0",
+      "title": "Major YouTube creators are facing backlash for accepting AI money",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/983181/matti-haapoja-sam-kold-kolder-higgsfield-seedance-backlash",
+      "summary": "Over the past few days, a number of prominent filmmaking content creators including Matti Haapoja and Sam \"Kold\" Kolder have posted videos of themselves demonstrating what's possible with AI platform ",
+      "content": "Over the past few days, a number of prominent filmmaking content creators including Matti Haapoja and Sam \"Kold\" Kolder have posted videos of themselves demonstrating what's possible with AI platform Higgsfield . The videos highlight Higgsfield's recently added Seedance 2.5 functionality and pitch these technologies as the future of video production. In response to these videos, other creators started sharing what appear to be screenshots of partnership offers they'd received from PR firms working on Higgsfield's behalf. All of this led fans to the conclusion that Higgsfield has been trying to use creators to boost its profile and garner goo … Read the full story at The Verge.",
+      "points": 0,
+      "comments": 0,
+      "author": "",
+      "published_at": "2026-08-21T15:55:34.000Z",
+      "published_ts": 1787327734000
+    },
+    {
       "source": "hacker-news",
       "source_name": "Hacker News",
       "id": "hn-49389565",
@@ -392,10 +378,10 @@
       "source": "techcrunch",
       "source_name": "TechCrunch",
       "id": "techcrunch-3",
-      "title": "Starcloud raises $250 million for orbital data centers as launch options dry up",
-      "url": "https://techcrunch.com/2026/08/21/starcloud-raises-200-million-for-orbital-data-centers-as-launch-options-dry-up/",
-      "summary": "There's about to be a big fight to secure access to space.",
-      "content": "There's about to be a big fight to secure access to space.",
+      "title": "The DOJ is investigating a16z. What does this mean for venture capital?",
+      "url": "https://techcrunch.com/podcast/the-doj-is-investigating-a16z-what-does-this-mean-for-venture-capital/",
+      "summary": "Andreessen Horowitz has two partners sitting on the boards of companies that now&#160;compete with each other: Ben Horowitz at Databricks and Martin Casado at&#160;Fivetran. Nothing too scandalous on ",
+      "content": "Andreessen Horowitz has two partners sitting on the boards of companies that now&#160;compete with each other: Ben Horowitz at Databricks and Martin Casado at&#160;Fivetran. Nothing too scandalous on the surface, except&#160;the Department of&#160;Justice&#160;has&#160;reportedly&#160;been investigating the arrangement&#160;for&#160;almost&#160;a&#160;year, dusting&#160;off a 112-year-old antitrust&#160;law&#160;that&#8217;s&#160;rarely used against VCs.&#160; Board conflicts&#160;aren&#8217;t&#160;exactly new, and these companies&#160;weren&#8217;t&#160;necessarily direct competitors when a16z first invested [&#8230;]",
       "points": 0,
       "comments": 0,
       "author": "",
@@ -406,10 +392,10 @@
       "source": "techcrunch",
       "source_name": "TechCrunch",
       "id": "techcrunch-4",
-      "title": "The DOJ is investigating a16z. What does this mean for venture capital?",
-      "url": "https://techcrunch.com/podcast/the-doj-is-investigating-a16z-what-does-this-mean-for-venture-capital/",
-      "summary": "Andreessen Horowitz has two partners sitting on the boards of companies that now&#160;compete with each other: Ben Horowitz at Databricks and Martin Casado at&#160;Fivetran. Nothing too scandalous on ",
-      "content": "Andreessen Horowitz has two partners sitting on the boards of companies that now&#160;compete with each other: Ben Horowitz at Databricks and Martin Casado at&#160;Fivetran. Nothing too scandalous on the surface, except&#160;the Department of&#160;Justice&#160;has&#160;reportedly&#160;been investigating the arrangement&#160;for&#160;almost&#160;a&#160;year, dusting&#160;off a 112-year-old antitrust&#160;law&#160;that&#8217;s&#160;rarely used against VCs.&#160; Board conflicts&#160;aren&#8217;t&#160;exactly new, and these companies&#160;weren&#8217;t&#160;necessarily direct competitors when a16z first invested [&#8230;]",
+      "title": "Starcloud raises $250 million for orbital data centers as launch options dry up",
+      "url": "https://techcrunch.com/2026/08/21/starcloud-raises-200-million-for-orbital-data-centers-as-launch-options-dry-up/",
+      "summary": "There's about to be a big fight to secure access to space.",
+      "content": "There's about to be a big fight to secure access to space.",
       "points": 0,
       "comments": 0,
       "author": "",
@@ -1007,7 +993,7 @@
     {
       "source": "the-verge",
       "source_name": "The Verge",
-      "id": "the-verge-2",
+      "id": "the-verge-1",
       "title": "Google Discover is getting an AI chatbot-tuned feed",
       "url": "https://www.theverge.com/tech/983088/google-discover-ai-chatbot-feed",
       "summary": "Google will soon allow you to customize your Discover feed by describing what you want to see. The new feature, rolling out to the Google app in the \"coming days,\" will use AI to automatically tweak y",
@@ -1049,7 +1035,7 @@
     {
       "source": "the-verge",
       "source_name": "The Verge",
-      "id": "the-verge-3",
+      "id": "the-verge-2",
       "title": "It’s Greg Brockman’s OpenAI now",
       "url": "https://www.theverge.com/ai-artificial-intelligence/982774/greg-brockman-openai-role-expansion",
       "summary": "OpenAI has had a hell of a year. The company spent months battling former cofounder Elon Musk in a sensational jury trial, was hit with a high-profile trade secrets lawsuit from Apple, and faced wides",
@@ -1175,7 +1161,7 @@
     {
       "source": "the-verge",
       "source_name": "The Verge",
-      "id": "the-verge-4",
+      "id": "the-verge-3",
       "title": "Welcome to the AI crisis in math",
       "url": "https://www.theverge.com/podcast/982434/ai-math-openai-astra-existential-crisis",
       "summary": "Today on Decoder, I’m talking with Robert Hart, The Verge’s London-based AI reporter, about what AI is doing to the field of mathematics and the existential crisis many lead mathematicians are having ",
@@ -1441,7 +1427,7 @@
     {
       "source": "the-verge",
       "source_name": "The Verge",
-      "id": "the-verge-5",
+      "id": "the-verge-4",
       "title": "Slack is launching collaborative vibe-coding channels",
       "url": "https://www.theverge.com/tech/982628/slack-code-vibe-coding-channels-launch",
       "summary": "Slack is introducing dedicated channels where teams can vibe-code together with AI agents instead of jumping between different tools and conversations. The Slack Code launch includes open, project-spe",
@@ -1539,7 +1525,7 @@
     {
       "source": "the-verge",
       "source_name": "The Verge",
-      "id": "the-verge-6",
+      "id": "the-verge-5",
       "title": "Google Gemini is getting a dedicated student hub",
       "url": "https://www.theverge.com/ai-artificial-intelligence/982425/google-gemini-student-hub",
       "summary": "As we're gearing up for back-to-school season, Google is rolling out a new dedicated student hub in Gemini. It's a one-stop repository for collecting research in a study notebook, creating flashcards,",
@@ -1553,7 +1539,7 @@
     {
       "source": "the-verge",
       "source_name": "The Verge",
-      "id": "the-verge-7",
+      "id": "the-verge-6",
       "title": "OpenAI hit the brakes. Now what?",
       "url": "https://www.theverge.com/ai-artificial-intelligence/982323/openai-hit-brakes-voluntary-pacing-ai",
       "summary": "With a looming IPO, intense competition from Anthropic, and Chinese and open-weight rivals nipping at its heels, OpenAI has plenty of reasons to move fast. Instead, it hit the brakes. On Tuesday, the ",
@@ -1567,7 +1553,7 @@
     {
       "source": "the-verge",
       "source_name": "The Verge",
-      "id": "the-verge-8",
+      "id": "the-verge-7",
       "title": "Meta AI is getting a Mac app",
       "url": "https://www.theverge.com/tech/982270/meta-ai-mac-app",
       "summary": "Meta is launching a new Mac app dedicated to its AI chatbot. In an announcement on Wednesday, Meta says you can share your window with its AI chatbot, which can provide suggestions, answer questions, ",
@@ -1595,7 +1581,7 @@
     {
       "source": "the-verge",
       "source_name": "The Verge",
-      "id": "the-verge-9",
+      "id": "the-verge-8",
       "title": "Nvidia’s new financial strategy does not compute",
       "url": "https://www.theverge.com/ai-artificial-intelligence/981668/nvidias-goldman-blackrock-gpu-compute-asset",
       "summary": "April - 1805 Napoleon is master of Europe Only the British fleet stands before him Compute is now an asset class I see it is once again time to talk financial innovation. Apollo, BlackRock, Blackstone",
@@ -1605,6 +1591,20 @@
       "author": "",
       "published_at": "2026-08-19T13:30:41.000Z",
       "published_ts": 1787146241000
+    },
+    {
+      "source": "the-verge",
+      "source_name": "The Verge",
+      "id": "the-verge-9",
+      "title": "Robin Williams’ Instagram account brought back to fight ‘AI abuse’",
+      "url": "https://www.theverge.com/entertainment/981644/robin-williams-instagram-account-ai",
+      "summary": "Robin Williams' children are taking over their father's Instagram account after his daughter spoke out against the use of his AI likeness, as reported earlier by The Wrap. In a post on Tuesday, Zak, Z",
+      "content": "Robin Williams' children are taking over their father's Instagram account after his daughter spoke out against the use of his AI likeness, as reported earlier by The Wrap . In a post on Tuesday , Zak, Zelda, and Cody Williams write that they want the late actor's Instagram profile to be a \"safe, trusted place where the stories, photos, videos, and memories shared reflect his legacy with authenticity, warmth, and care.\" A story posted to Zelda Williams' own Instagram account expands on the decision to bring back her father's profile, saying that it's meant to help combat \"rampant AI abuse,\" according to The Wrap : I'm sorry if anyone found Da … Read the full story at The Verge.",
+      "points": 0,
+      "comments": 0,
+      "author": "",
+      "published_at": "2026-08-18T19:48:26.000Z",
+      "published_ts": 1787082506000
     },
     {
       "source": "venturebeat",
