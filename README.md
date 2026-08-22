@@ -1,6 +1,6 @@
 # AI News Data
 
-每日全球 AI 资讯数据仓库，由 GitHub Actions 定时抓取，供「陈荣健工具箱」小程序展示。
+每日全球 AI 资讯数据仓库，由 GitHub Actions 定时抓取，供微信小程序（工具箱类）展示。
 
 ## 数据源
 
